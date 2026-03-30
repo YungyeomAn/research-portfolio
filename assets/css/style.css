@@ -426,15 +426,6 @@ h3 {
   max-height: 60px;
 }
 
-.experience-details summary {
-  list-style: none;
-  cursor: pointer;
-}
-
-.experience-details summary::-webkit-details-marker {
-  display: none;
-}
-
 .card-action span {
   font-size: 85%;
   color: #666;
@@ -529,6 +520,64 @@ a.hoverline:hover {
 
 .card-action a.btn-floating {
   margin-bottom: 0;
+}
+
+/* 1. 기관명과 직무 양 끝 정렬 */
+.card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+/* 2. 우측 직무 스타일 (힘 빼기) */
+.role-title-right {
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0px;
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+/* 3. 기술 스택 태그 스타일 */
+.tools-container {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tool-tag {
+  background-color: #f0f0f0;
+  color: #455a64;
+  padding: 2px 10px;
+  border-radius: 4px; /* 연구원 느낌의 깔끔한 사각 둥근 모서리 */
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #e0e0e0;
+}
+
+/* 4. 카드 전체 입체감 및 호버 효과 */
+.experience-details {
+  border: 1px solid #eee !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+  transition: 0.3s;
+  border-radius: 8px;
+}
+
+.experience-details summary:hover {
+  background-color: #fafafa;
+}
+
+/* 5. 모바일 대응: 화면이 좁아지면 직무를 다시 아래로 */
+@media (max-width: 600px) {
+  .card-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .role-title-right {
+    margin-top: 4px;
+  }
 }
 
 #contact a:not(.btn-floating) {
