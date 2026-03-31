@@ -523,20 +523,12 @@ a.hoverline:hover {
 }
 
 /* 1. 기관명과 직무 양 끝 정렬 */
-.card-title-row {
+.row card-content {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   width: 100%;
   margin-bottom: 5px;
-}
-
-/* 2. 우측 직무 스타일 (힘 빼기) */
-.role-title-right {
-  font-size: 0.95rem;
-  font-weight: 400;
-  letter-spacing: 0px;
-  white-space: nowrap; /* 줄바꿈 방지 */
 }
 
 /* 3. 기술 스택 태그 스타일 */
@@ -578,6 +570,29 @@ a.hoverline:hover {
   .role-title-right {
     margin-top: 4px;
   }
+}
+
+/*추가한 role for experience*/
+.card .role-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  display: block; /* 한 줄을 다 차지하도록 */
+  margin-top: 10px;
+}
+
+/* 2. 기간 및 장소 (신규) */
+.card .period {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+
+/* 3. 간단 설명 (신규) */
+.card .description {
+  display: block;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 15px;
 }
 
 #contact a:not(.btn-floating) {
@@ -710,28 +725,7 @@ small {
     top: initial;
   }
 }
-/*추가한 role for experience*/
-.card .role-title {
-  font-size: 1.25rem;
-  font-weight: 500;
-  display: block; /* 한 줄을 다 차지하도록 */
-  margin-top: 10px;
-}
 
-/* 2. 기간 및 장소 (신규) */
-.card .period {
-  display: block;
-  font-size: 0.95rem;
-  margin-bottom: 5px;
-}
-
-/* 3. 간단 설명 (신규) */
-.card .description {
-  display: block;
-  font-size: 0.9rem;
-  font-style: italic;
-  margin-bottom: 15px;
-}
 
 @media (max-width: 600px) {
   h2 {
