@@ -558,14 +558,14 @@ a.hoverline:hover {
 }
 
 /* 4. 카드 전체 입체감 및 호버 효과 */
-.experience-details {
+.exp-card {
   border: 1px solid #eee !important;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
   transition: 0.3s;
   border-radius: 8px;
 }
 
-.experience-details summary:hover {
+.exp-card summary:hover {
   background-color: #fafafa;
 }
 
