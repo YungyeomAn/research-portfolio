@@ -524,6 +524,16 @@ a.hoverline:hover {
 }
 
 /* 수정 중인 부분 - 내가 추가한  */
+
+#experience .container {
+  --card-bg: #ffffff;
+  --hover-bg: #f9f9f9;
+  --border-color: #eeeeee;
+  --text-main: #1a1a1a;
+  --text-sub: #666666;
+  --accent-color: #333333;
+}
+  
 .exp-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
