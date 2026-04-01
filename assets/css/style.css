@@ -554,7 +554,7 @@ a.hoverline:hover {
 
 .exp-header {
   display: flex;
-  padding: 15px;
+  padding: 15px 0px;
 }
 
 /* 로고 영역과 세로선 */
@@ -589,8 +589,8 @@ a.hoverline:hover {
 
 .inst-name {
   margin: 0;
-  padding: 0
-  font-size: 1.15rem;
+  padding: 0;
+  font-size: 1.3rem;
   font-weight: 700;
   line-height: 1.2;
   color: var(--text-main);
@@ -611,8 +611,8 @@ a.hoverline:hover {
 .divider { margin: 0 8px; color: #ddd; }
 
 .exp-summary {
-  margin: 0 0 12px 0;
-  font-size: 0.95rem;
+  margin: 0 0 12px 0;      
+  font-size: 1.0rem;
   line-height: 1.5;
   color: #444;
 }
