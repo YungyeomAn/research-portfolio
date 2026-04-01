@@ -553,7 +553,7 @@ a.hoverline:hover {
 
 .exp-header {
   display: flex;
-  padding: 15px 20px;
+  padding: 15px 15px;
   align-items: center;
 }
 
@@ -567,7 +567,7 @@ a.hoverline:hover {
   justify-content: center;
   flex-shrink: 0;
   border-right: 1px solid var(--border-color); /* 질문하신 세로선 */
-  padding: 15px 10px 15px 0;
+  padding: 15px 15px 15px 0;
   margin-right: 24px; /*선과 오른쪽 텍스트 사이의 간격 */
 }
 
