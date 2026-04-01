@@ -545,7 +545,7 @@ a.hoverline:hover {
 }
 
 /* Hover 효과: 배경이 살짝 어두워지고 위로 살짝 뜸 */
-.experience-card:hover {
+.exp-card:hover {
   background-color: var(--hover-bg);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -567,7 +567,7 @@ a.hoverline:hover {
   justify-content: center;
   flex-shrink: 0;
   border-right: 1px solid var(--border-color); /* 질문하신 세로선 */
-  padding: 15px 0 15px 10px;
+  padding: 15px 10 15px 0px;
   margin-right: 24px; /*선과 오른쪽 텍스트 사이의 간격 */
 }
 
