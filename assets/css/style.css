@@ -554,14 +554,15 @@ a.hoverline:hover {
 
 .exp-header {
   display: flex;
-  padding: 15px 0px;
-  align-itmes: center;
+  padding: 15px 20px;
+  align-items: center;
 }
 
 /* 로고 영역과 세로선 */
 .logo-section {
   width: 140px;
-  height: 60px;
+  /*height: 60px;*/
+  align-self: stretch;
   display: flex;
   align-items: center;
   justify-content: center;
