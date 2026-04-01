@@ -555,7 +555,6 @@ a.hoverline:hover {
 .exp-header {
   display: flex;
   padding: 24px;
-  align-items: center; /* 세로 중앙 정렬 */
 }
 
 /* 로고 영역과 세로선 */
@@ -590,9 +589,10 @@ a.hoverline:hover {
 
 .inst-name {
   margin: 0;
+  padding: 0
   font-size: 1.15rem;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.2;
   color: var(--text-main);
 }
 
