@@ -555,6 +555,7 @@ a.hoverline:hover {
 .exp-header {
   display: flex;
   padding: 15px 0px;
+  align-itmes: center;
 }
 
 /* 로고 영역과 세로선 */
@@ -566,7 +567,7 @@ a.hoverline:hover {
   justify-content: center;
   flex-shrink: 0;
   border-right: 1px solid var(--border-color); /* 질문하신 세로선 */
-  padding-right: 15px;
+  padding: 15px;
   margin-right: 24px;
 }
 
