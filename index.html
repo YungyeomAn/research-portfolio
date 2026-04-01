@@ -293,8 +293,50 @@
       <div class="container">
 
         <!-- -------------Experience1: CSC (김기문 교수님)------------- -->
-        <details class="exp-card">
-          <summary class="exp-header">
+        <div class="exp-card" onclick ="toggleCard(this)">
+          <div class="exp-header">
+            <div class="logo-section">
+              <img src="assets/img/csc_logo_modified.png" class="inst-logo" als="CSC logo">
+            </div>
+            <div class="info-section">
+              <div class="exp-title-row">
+                <h3 class="inst-name">Center for Self-assembly and Complexiy</h3>
+                <span class="date"><i class="mdi-calendar-range"</i> JULY 2022 – FEB 2023 | OCT 2025 – PRESENT (15 MONTHS)</span>
+              </div>
+              <div class="exp-sub-info">
+                <span class="role">Undergraduate Researcher</span>
+                <span class="divider">|</span>
+                <span class="location"><i class="mdi-maps-place"</i>Pohang, Republic of Korea</span>
+              </div>
+
+              <p class="exp-summary"> Programmable chemical patterns using audible sound
+
+              <div class="tools-container">
+                <span class="tool-tag">MATLAB</span>
+                <span class="tool-tag">ImageJ</span>
+                <span class="tool-tag">Directed Self-Assembly</span>
+                <span class="tool-tag">System Chemistry</span>
+                <span class="tool-tag">Materials Chemistry</span>
+                <span class="tool-tag">Experimental Setup</span>  <!-- Custom Instrumentation -->
+              </div>
+            </div>
+            <div class="expand-status-icon">+</div>
+          </div>
+
+          <div class="exp-body">
+            <div class="details-content" onclick="event.stopPropagation()">
+              <h4>Research Overview and Key Responsibilities</h4>
+              <ul>
+                <li><strong>Advisor:</strong> Prof. Kimoon Kim
+                <li>Developed a new protocol for audible sound pattern generation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+              
+
+      <!--    
             <div class="row card-content valign-wrapper">
               <div class="col s12 m2">
                 <img alt="CSC logo" src="assets/img/csc_logo_modified.png" class="responsive-img center-block" />
@@ -307,23 +349,7 @@
             <div class = "exp-description grey-text text-darken">
               Programmable chemical pattern using audible sound
             </div>
-            <div class="tools-container">
-              <span class="tool-tag">MATLAB</span>
-              <span class="tool-tag">ImageJ</span>
-              <span class="tool-tag">Directed Self-Assembly</span>
-              <span class="tool-tag">System Chemistry</span>
-              <span class="tool-tag">Materials Chemistry</span>
-              <span class="tool-tag">Experimental Setup</span>  <!-- Custom Instrumentation -->
-            </div>
-          </summary>
-        <div class="exp-details">
-          <i class="mdi-maps-place"></i><span>Pohang, Republic of Korea</span>
-          <ul>
-            <li>Developed and managed the backend of an e-commerce platform...</li>
-            <li>Improved the response time by 20% by refactoring...</li>
-          </ul>
-        </div>
-      </details>
+   -->
         
         <div class="card">
           <div class="card-content">
@@ -933,6 +959,23 @@ environment
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
       })
     })
+
+  <!--experience section javascript>
+  function toggleCard(cardElement) {
+    // 1. 활성화 상태 토글 (아이콘 회전 및 스타일용)
+    cardElement.classList.toggle('active');
+    
+    // 2. 상세 내용 영역 찾기
+    const body = cardElement.querySelector('.card-body');
+    
+    // 3. 높이 계산하여 애니메이션 적용
+    if (body.style.maxHeight) {
+      body.style.maxHeight = null;
+    } else {
+      // scrollHeight는 요소의 실제 콘텐츠 높이를 가져옴
+      body.style.maxHeight = body.scrollHeight + "px";
+    }
+  }
   </script>
 </body>
 <style>
