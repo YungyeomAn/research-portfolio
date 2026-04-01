@@ -666,7 +666,7 @@ a.hoverline:hover {
 }
 
 .details-content {
-  padding: 20px 24px 30px 188px; /* 로고 너비만큼 왼쪽 여백을 주어 텍스트 라인 맞춤 */
+  padding: 20px ;
   border-top: 1px solid #f0f0f0;
 }
 
