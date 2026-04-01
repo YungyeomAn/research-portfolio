@@ -638,7 +638,7 @@ a.hoverline:hover {
 }
 
 /* + 아이콘 애니메이션 */
-.exp-status-icon {
+.expand-status-icon {
   font-size: 24px;
   color: #bbb;
   margin-left: 20px;
@@ -647,7 +647,7 @@ a.hoverline:hover {
   text-align: center;
 }
 
-.exp-card.active .exp-status-icon {
+.exp-card.active .expand-status-icon {
   transform: rotate(45deg); /* + 가 x로 회전 */
   color: var(--accent-color);
 }
