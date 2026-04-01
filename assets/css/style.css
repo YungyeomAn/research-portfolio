@@ -413,6 +413,7 @@ h3 {
   text-transform: uppercase;
 }
 
+/* Experience Section */
 #experience .card-action {
   background-color: rgba(0, 0, 0, 0.02);
   border: none;
@@ -522,13 +523,86 @@ a.hoverline:hover {
   margin-bottom: 0;
 }
 
-/* 1. 기관명과 직무 양 끝 정렬 */
-.row card-content {
+/* 수정 중인 부분 - 내가 추가한  */
+.exp-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Hover 효과: 배경이 살짝 어두워지고 위로 살짝 뜸 */
+.experience-card:hover {
+  background-color: var(--hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.exp-header {
+  display: flex;
+  padding: 24px;
+  align-items: center; /* 세로 중앙 정렬 */
+}
+
+/* 로고 영역과 세로선 */
+.logo-section {
+  width: 140px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border-color); /* 질문하신 세로선 */
+  padding-right: 20px;
+  margin-right: 24px;
+}
+
+.inst-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* 가로 로고 비율 유지 */
+}
+
+.info-section {
+  flex-grow: 1;
+}
+
+.exp-title-row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  width: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+}
+
+.inst-name {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #999;
+  font-weight: 500;
+}
+
+.exp-sub-info {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  margin-bottom: 10px;
+}
+
+.divider { margin: 0 8px; color: #ddd; }
+
+.exp-summary {
+  margin: 0 0 12px 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
 }
 
 /* 3. 기술 스택 태그 스타일 */
@@ -549,51 +623,59 @@ a.hoverline:hover {
   border: 1px solid #e0e0e0;
 }
 
-/* 4. 카드 전체 입체감 및 호버 효과 */
+/* + 아이콘 애니메이션 */
+.exp-status-icon {
+  font-size: 24px;
+  color: #bbb;
+  margin-left: 20px;
+  transition: transform 0.3s ease;
+  width: 24px;
+  text-align: center;
+}
+
+.exp-card.active .exp-status-icon {
+  transform: rotate(45deg); /* + 가 x로 회전 */
+  color: var(--accent-color);
+}
+
+/* 확장 본문 */
+.exp-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  background-color: #fcfcfc;
+}
+
+.details-content {
+  padding: 20px 24px 30px 188px; /* 로고 너비만큼 왼쪽 여백을 주어 텍스트 라인 맞춤 */
+  border-top: 1px solid #f0f0f0;
+}
+
+.details-content ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .card-header { flex-direction: column; align-items: flex-start; }
+  .logo-section { border-right: none; border-bottom: 1px solid var(--border-color); width: 100%; justify-content: flex-start; padding-bottom: 15px; margin-bottom: 15px; }
+  .details-content { padding-left: 24px; }
+  .title-row { flex-direction: column; }
+  .date { margin-top: 5px; }
+  .status-icon { display: none; } /* 모바일에선 아이콘 생략 가능 */
+}
+
+/* 4. 카드 전체 입체감 및 호버 효과
 .exp-card {
   border: 1px solid #eee !important;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
   transition: 0.3s;
   border-radius: 8px;
 }
-
-.exp-card summary:hover {
-  background-color: #fafafa;
-}
-
-/* 5. 모바일 대응: 화면이 좁아지면 직무를 다시 아래로 */
-@media (max-width: 600px) {
-  .card-title-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .role-title-right {
-    margin-top: 4px;
-  }
-}
-
-/*추가한 role for experience*/
-.card .role-title {
-  font-size: 1.25rem;
-  font-weight: 500;
-  display: block; /* 한 줄을 다 차지하도록 */
-  margin-top: 10px;
-}
-
-/* 2. 기간 및 장소 (신규) */
-.card .period {
-  display: block;
-  font-size: 0.95rem;
-  margin-bottom: 5px;
-}
-
-/* 3. 간단 설명 (신규) */
-.card .description {
-  display: block;
-  font-size: 0.9rem;
-  font-style: italic;
-  margin-bottom: 15px;
-}
+*/
 
 #contact a:not(.btn-floating) {
   bottom: 6px;
