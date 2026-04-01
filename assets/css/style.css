@@ -585,15 +585,14 @@ a.hoverline:hover {
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 6px;
-  padding: 0;
 }
 
 .inst-name {
-  margin: 0;
-  padding: 0;
-  font-size: 1.15rem;
-  font-weight: 700;
-  line-height: 1.15;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 1.17rem !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
   color: var(--text-main);
 }
 
@@ -607,6 +606,7 @@ a.hoverline:hover {
   font-size: 0.9rem;
   color: var(--text-sub);
   margin-bottom: 10px;
+  align-items: center:
 }
 
 .divider { margin: 0 8px; color: #ddd; }
