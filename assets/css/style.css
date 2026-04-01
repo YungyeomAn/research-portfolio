@@ -542,7 +542,6 @@ a.hoverline:hover {
   overflow: hidden;
   cursor: pointer;
   transition: all 0.25s ease;
-  
 }
 
 /* Hover 효과: 배경이 살짝 어두워지고 위로 살짝 뜸 */
@@ -659,6 +658,11 @@ a.hoverline:hover {
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
   background-color: #fcfcfc;
+}
+
+
+#exeprience h4 {
+  font-size: 1.15 rem;
 }
 
 .details-content {
