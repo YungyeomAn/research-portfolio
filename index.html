@@ -963,7 +963,7 @@ environment
   <!--experience section javascript 내가 추가한 부분-->
     function toggleCard(cardElement) {
       cardElement.classList.toggle('active'); // 1. 활성화 상태 토글 (아이콘 회전 및 스타일용)
-      const body = cardElement.querySelector('.card-body');  // 2. 상세 내용 영역 찾기
+      const body = cardElement.querySelector('.exp-body');  // 2. 상세 내용 영역 찾기
       if (body.style.maxHeight) {  // 3. 높이 계산하여 애니메이션 적용
         body.style.maxHeight = null;
       } else {
