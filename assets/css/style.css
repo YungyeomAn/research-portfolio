@@ -591,7 +591,7 @@ a.hoverline:hover {
 .inst-name {
   margin: 0;
   padding: 0;
-  font-size: 1.17rem;
+  font-size: 1.15rem;
   font-weight: 700;
   line-height: 1.15;
   color: var(--text-main);
