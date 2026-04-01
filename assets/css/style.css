@@ -567,8 +567,8 @@ a.hoverline:hover {
   justify-content: center;
   flex-shrink: 0;
   border-right: 1px solid var(--border-color); /* 질문하신 세로선 */
-  padding: 15px;
-  margin-right: 24px;
+  padding: 15px 0;
+  margin-right: 24px; /*선과 오른쪽 텍스트 사이의 간격 */
 }
 
 .inst-logo {
