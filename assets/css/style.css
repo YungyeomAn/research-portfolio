@@ -537,11 +537,12 @@ a.hoverline:hover {
 .exp-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
+  border-radius: 8px;
   margin-bottom: 16px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.25s ease;
+  
 }
 
 /* Hover 효과: 배경이 살짝 어두워지고 위로 살짝 뜸 */
@@ -566,7 +567,7 @@ a.hoverline:hover {
   justify-content: center;
   flex-shrink: 0;
   border-right: 1px solid var(--border-color); /* 질문하신 세로선 */
-  padding-right: 20px;
+  padding-right: 15px;
   margin-right: 24px;
 }
 
@@ -591,6 +592,7 @@ a.hoverline:hover {
   margin: 0;
   font-size: 1.15rem;
   font-weight: 700;
+  line-height: 1.4;
   color: var(--text-main);
 }
 
