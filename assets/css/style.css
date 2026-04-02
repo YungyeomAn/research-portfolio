@@ -684,7 +684,7 @@ a.hoverline:hover {
 
 /* Project Section - added by me - 수정 중*/
 #projects .card.medium{
-  height: 600px;
+  height: 500px;
 }
 
 #projects .card.medium .card-content .card-action{
