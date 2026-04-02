@@ -531,7 +531,7 @@ a.hoverline:hover {
   margin-bottom: 0;
 }
 
-/* 수정 중인 부분 - 내가 추가한  */
+/* exprerience section - added by me*/
 
 #experience .container {
   --card-bg: #ffffff;
@@ -627,7 +627,6 @@ a.hoverline:hover {
   color: #444;
 }
 
-/* 3. 기술 스택 태그 스타일 */
 .tools-container {
   margin-top: 12px;
   display: flex;
@@ -645,8 +644,7 @@ a.hoverline:hover {
   border: 1px solid #e0e0e0;
 }
 
-/* + 아이콘 애니메이션 */
-.expand-status-icon {
+.expand-status-icon {  /* + 아이콘 */
   font-size: 24px;
   color: #bbb;
   margin-left: 20px;
@@ -668,7 +666,6 @@ a.hoverline:hover {
   background-color: #fcfcfc;
 }
 
-
 #exeprience h4 {
   font-size: 1.15 rem;
 }
@@ -683,6 +680,11 @@ a.hoverline:hover {
   padding-left: 20px;
   color: #555;
   line-height: 1.8;
+}
+
+/* Project Section - added by me*/
+#projects .card.medium{
+  height: 600px;
 }
 
 /* 모바일 대응 */
