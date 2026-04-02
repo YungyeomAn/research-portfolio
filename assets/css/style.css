@@ -452,11 +452,19 @@ h3 {
 }
 
 .card .card-content .card-title {
-  line-height: 2.5rem;
+  line-height: 1.5rem;
+  line-height: 1.4;
+  padding-right: 20px;
+  position: relative;
+  display: block;
 }
 
-.card i.right {
-  margin-left: 10px;
+.card .card-content .card-title i.right {
+  position: absolute; /* 부모(.card-title) 기준으로 절대 위치 */
+  right: 0;           /* 오른쪽 끝에 붙임 */
+  top: 0;             /* 위쪽 끝에 붙임 */
+  margin-left: 10;
+  line-height: inherit; /* 제목 높이에 맞춤 */
 }
 
 a.hoverline {
