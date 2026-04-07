@@ -605,9 +605,9 @@ a.hoverline:hover {
   color: var(--text-main);
 }
 
-.date {
-  font-size: 0.8rem;
-  color: #999;
+.role {
+  font-size: 0.9rem;
+  color: var(--text-sub);
   font-weight: 500;
 }
 
