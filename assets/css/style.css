@@ -417,7 +417,7 @@ h3 {
 #experience .card-action {
   background-color: rgba(0, 0, 0, 0.02);
   border: none;
-  padding: 15px 24px;
+  padding: 8px 24px;
 }
 
 #experience .card .col.s12.m2 a {
@@ -609,7 +609,7 @@ a.hoverline:hover {
 .role {
   font-size: 0.9rem;
   color: var(--text-sub);
-  font-weight: 500;
+  /*font-weight: 500;*/
 }
 
 .exp-sub-info {
