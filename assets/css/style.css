@@ -16,8 +16,9 @@
 }
 
 .profile-pic img {
-  width: 100%;
-  height: auto;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
 }
 
 .tracker {
