@@ -568,7 +568,7 @@ a.hoverline:hover {
 /* 로고 영역과 세로선 */
 .logo-section {
   width: 140px;
-  /*height: 60px;*/
+  height: 120px;
   align-self: stretch;
   display: flex;
   align-items: center;
