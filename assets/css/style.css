@@ -194,13 +194,8 @@ nav i {
 
 /* main */
 
-/* main {
-  background: url(../../assets/img/bg.png) repeat;
-  padding-left: 190px;
-} */
-
 main {
-  background: url(../../assets/img/bg.png) repeat;
+  background: #EEF5FF url(../../assets/img/bg_1.png) repeat;
   padding-left: 190px;
 }
 
