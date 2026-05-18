@@ -976,23 +976,15 @@ environment
         // 1. 해당 프로젝트 카드로 부드럽게 화면 이동
         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
         
-        // 💡 [핵심] 테두리와 그림자가 잘리지 않도록 overflow를 완전히 뚫어줍니다.
-        card.style.setProperty('overflow', 'visible', 'important'); 
-        
-        // 2. 테두리와 그림자 주입
+        // 2. 카드 크기나 overflow를 건들지 않고, 그림자(외곽+내부)만으로 강력하게 강조 시선 집중
         card.style.transition = 'all 0.4s ease-out';
-        card.style.border = '2px solid #176B87'; 
-        card.style.boxShadow = '0 10px 30px rgba(23, 107, 135, 0.4)'; 
+        card.style.boxShadow = '0 0 0 3px #176B87, 0 10px 30px rgba(23, 107, 135, 0.4)'; 
         card.style.transform = 'translateY(-5px)'; 
         
-        // 3. 4초 뒤 원래대로 복구
+        // 3. 4초 동안 보여준 뒤 원래 카드의 깔끔한 상태로 복구
         setTimeout(() => {
-          card.style.border = '1px solid transparent';
           card.style.boxShadow = '0 2px 5px 0 rgba(0,0,0,0.16)'; 
           card.style.transform = 'translateY(0)';
-          
-          // 💡 [핵심] 강조가 끝나면 다시 내부를 깔끔하게 hidden으로 닫아줍니다.
-          card.style.setProperty('overflow', 'hidden', 'important');
         }, 4000);
       }
     }
