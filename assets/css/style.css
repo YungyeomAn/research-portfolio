@@ -691,7 +691,7 @@ a.hoverline:hover {
 }
 
 #projects .card.medium .card-content .card-action {
-  padding: 0;
+  padding: 8;
 }
 
 #projects .card.medium .card-reveal {
