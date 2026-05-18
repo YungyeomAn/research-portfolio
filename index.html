@@ -974,8 +974,8 @@ environment
       const card = document.getElementById(cardId);
       if (card) {
         // 1. 해당 프로젝트 카드로 부드럽게 화면 이동
-        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        card.style.overflow = 'visible'; 
         // 2. 외부 라이브러리 간섭 없이 자바스크립트로 직접 테두리와 그림자 주입
         card.style.transition = 'all 0.4s ease-out';
         card.style.border = '2px solid #176B87'; // 유저님의 예쁜 파란색
@@ -987,6 +987,7 @@ environment
           card.style.border = '1px solid transparent';
           card.style.boxShadow = '0 2px 5px 0 rgba(0,0,0,0.16)'; // Materialize 순정 그림자
           card.style.transform = 'translateY(0)';
+          card.style.overflow = 'hidden';
         }, 4000);
       }
     }
