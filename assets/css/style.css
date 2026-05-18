@@ -709,6 +709,7 @@ a.hoverline:hover {
 /* 2. 내부 텍스트 가독성 설정 */
 #projects .card.medium .card-reveal > *:not(.card-action):not(.card-title) {
   line-height: 1.6 !important;
+  margin-bottom: 70px !important;
 }
 
 #projects .card.medium .card-reveal > .card-reveal-body {
