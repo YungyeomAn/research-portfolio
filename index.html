@@ -751,7 +751,7 @@ environment
                 <img alt="image" src="assets/img/projects/Lignogel.png" style="height: 100%; width: 100%" class="activator" />
               </div>
               <div class="card-content">
-                <span class="card-title activator teal-text hoverline"> Lignin-based Biocompatible Hydrogel Adhesives </i></span>
+                <span class="card-title activator teal-text hoverline"> Lignin-based Biocompatible Hydrogel Adhesives <i class="mdi-navigation-more-vert right"></i></span>
                 <div class="project-keywords">#Hydrogels #Bioadhesives #Biomaterials #Green Chemistry</div>
                 <div class="card-action">
                   <p class="grey-text text-darken-1" style="font-size: 0.9rem;">
@@ -786,7 +786,7 @@ environment
                 <img alt="image" src="assets/img/projects/QD.png" style="height: 100%; width: 100%" class="activator" />
               </div>
               <div class="card-content">
-                <span class="card-title activator teal-text hoverline"> NIR Quantum Dot Probes for In-vivo Cancer Imaging ></i></span>
+                <span class="card-title activator teal-text hoverline"> NIR Quantum Dot Probes for In-vivo Cancer Imaging ><i class="mdi-navigation-more-vert right"></i></span>
                 <div class="project-keywords"> #Nanomaterials #Inorganic Synthesis #NIR Bioimaging #Surface Modification #Cancer Diagnostics </div>
                 <div class="card-action">
                   <p class="grey-text text-darken-1" style="font-size: 0.9rem;">
@@ -976,15 +976,13 @@ environment
         // 1. 해당 프로젝트 카드로 부드럽게 화면 이동
         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
         
-        // 2. 카드 크기나 overflow를 건들지 않고, 그림자(외곽+내부)만으로 강력하게 강조 시선 집중
+        // 2. 경계선(border) 없이 오직 은은한 푸른빛 그림자만 부여 (카드 크기 변화 없음)
         card.style.transition = 'all 0.4s ease-out';
-        card.style.boxShadow = '0 0 0 3px #176B87, 0 10px 30px rgba(23, 107, 135, 0.4)'; 
-        card.style.transform = 'translateY(-5px)'; 
+        card.style.boxShadow = '0 0 20px rgba(23, 107, 135, 0.8)'; 
         
-        // 3. 4초 동안 보여준 뒤 원래 카드의 깔끔한 상태로 복구
+        // 3. 4초 뒤 원래 카드의 기본 그림자로 복구
         setTimeout(() => {
           card.style.boxShadow = '0 2px 5px 0 rgba(0,0,0,0.16)'; 
-          card.style.transform = 'translateY(0)';
         }, 4000);
       }
     }
