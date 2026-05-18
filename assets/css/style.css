@@ -698,35 +698,49 @@ a.hoverline:hover {
   display: flex !important;
   flex-direction: column !important;
   overflow-y: auto !important; 
-  padding: 20px !important;
+  /* 💡 글자가 끝까지 내려갔을 때 버튼 뒤에 완전히 숨지 않고 여유 있게 보이기 위해 하단 패딩을 80px로 확보합니다. */
+  padding: 20px 20px 80px 20px !important;
   box-sizing: border-box;
 }
 
-/* 2. 내부 텍스트 가독성 설정 및 "여기만" 스크롤 부여 */
+/* 2. 내부 텍스트 가독성 설정 */
 #projects .card.medium .card-reveal > *:not(.card-action):not(.card-title) {
   line-height: 1.6 !important;
 }
 
-/* 3. HTML 구조를 그대로 둔 채, 맨 아래 card-action(버튼)을 바닥에 자연스럽게 밀착 */
+/* 3. HTML 구조를 그대로 둔 채, 맨 아래 card-action(버튼)을 바닥에 완벽 고정 및 글씨 가림 */
 #projects .card.medium .card-reveal .card-action {
-  margin-top: auto !important; /* flex 구조에서 버튼을 무조건 맨 밑으로 밀어냅니다 */
-  padding: 16px 0 0 0 !important; 
-  background: #fff !important; 
-  border-top: 1px solid rgba(160, 160, 160, 0.2) !important;
-  flex-shrink: 0 !important; /* 버튼이 찌그러지지 않도록 방어 */
   position: sticky !important;
-  bottom: 0 !important
+  bottom: -20px !important; /* 💡 부모 패딩(20px) 때문에 생기던 틈새를 메워 글씨 비침을 원천 차단합니다. */
+  margin-top: auto !important; 
+  
+  /* 💡 버튼 배경이 좌우로 꽉 차서 투명하게 비치는 곳이 없도록 패딩과 마진을 칼같이 정렬합니다. */
+  padding: 16px 20px !important; 
+  margin-left: -20px !important;
+  margin-right: -20px !important;
+  
+  background: #ffffff !important; /* 💡 뒤로 지나가는 글씨들을 가려주는 불투명 흰색 막 생성 */
+  border-top: 1px solid rgba(160, 160, 160, 0.2) !important;
+  flex-shrink: 0 !important; 
+  z-index: 10 !important; /* 💡 지나가는 글씨보다 무조건 위에 오도록 순위 지정 */
 }
 
 #projects .card.medium .card-image img {
   height: 100%;
   width: 100%;
-  object-fit: cover; /* 💡 핵심: 이미지가 찌그러지지 않고 프레임에 맞게 꽉 차게 잘립니다! */
-  object-position: center; /* 이미지가 잘릴 때 정중앙을 기준으로 자릅니다 */
+  object-fit: cover; 
+  object-position: center; 
 }
 
 #experience .card-action a.teal-text {
   color: #176B87 !important;
+}
+
+/* 4. 잃어버렸던 강조림자 기능 복구 (자바스크립트 연동용)
+/* 자바스크립트가 붙여주는 이름표를 인식하여, 그리드 여백에 속지 않고 카드의 순수 껍데기 라인에만 정밀하게 파란그림자가 생깁니다. */
+#projects .card.medium.focused-project {
+  transition: box-shadow 0.3s ease-out !important;
+  box-shadow: 0 0 15px 3px rgba(23, 107, 135, 0.8) !important;
 }
 
 @keyframes smoothFocus {
