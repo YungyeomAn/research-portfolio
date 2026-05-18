@@ -698,10 +698,12 @@ a.hoverline:hover {
   display: flex !important;
   flex-direction: column !important;
   height: 100%;
-  /* 💡 [수정] 카드 자체에 스크롤을 줍니다. 이렇게 해야 내부 태그들이 쪼개지지 않고 한 덩어리로 같이 스크롤 됩니다. */
   overflow-y: auto !important; 
-  padding: 20px !important;
+  /* 💡 [핵심] 3번에서 버튼을 absolute로 바닥에 박을 거라, 글자가 버튼 뒤로 숨지 않도록 아래쪽 패딩을 80px로 크게 줍니다. */
+  padding: 20px 20px 80px 20px !important;
   box-sizing: border-box;
+  /* 💡 absolute 자식의 기준점이 되도록 relative를 확실히 선언합니다. */
+  position: relative !important; 
 }
 
 /* 2. 내부 텍스트 가독성 설정 */
@@ -711,19 +713,22 @@ a.hoverline:hover {
   overflow-y: visible !important; 
 }
 
-/* 3. HTML 구조를 그대로 둔 채, 맨 아래 card-action(버튼)만 완벽히 고정 */
 #projects .card.medium .card-reveal .card-action {
-  /* 💡 sticky 대신 absolute로 바닥에 강제 고정합니다 */
+  /* 💡 [핵심] sticky 대신 absolute를 주면 부모의 스크롤 엘리베이터에서 완전히 내려서 바닥에 고정됩니다. */
   position: absolute !important;
   bottom: 0 !important; 
   left: 0;
   right: 0;
-
-  /* 💡 좌우 여백을 카드 안쪽 패딩(20px)과 맞추기 위해 줍니다 */
-  padding: 15px 20px !important; 
-  background: #fff;  
+  
+  /* 💡 기존에 꼬이게 만들던 margin-top은 무력화시킵니다. */
+  margin-top: 0 !important;  
+  
+  /* 💡 부모의 사방 패딩을 뚫고 꽉 차게 붙도록 좌우 패딩을 조정합니다. */
+  padding: 16px 20px !important; 
+  background: #fff; 
   border-top: 1px solid rgba(160, 160, 160, 0.2);
-  z-index: 2;
+  z-index: 5; /* 스크롤 되어 지나가는 텍스트보다 무조건 위에 오도록 설정 */
+  flex-shrink: 0; 
 }
 
 #projects .card.medium .card-image img {
