@@ -728,6 +728,26 @@ a.hoverline:hover {
   object-position: center; /* 이미지가 잘릴 때 정중앙을 기준으로 자릅니다 */
 }
 
+@keyframes smoothFocus {
+  0% {
+    /* 기존 Materialize 카드보다 더 깊고 부드러운 청록색 계열 그림자 */
+    box-shadow: 0 10px 30px rgba(0, 150, 136, 0.25);
+    border-color: #009688;
+    transform: translateY(-4px); /* 아주 살짝 위로 들리는 효과 */
+  }
+  100% {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16); /* 원래 카드로 원복 */
+    border-color: transparent;
+    transform: translateY(0);
+  }
+}
+
+.focused-card {
+  /* 2.5초 동안 아주 천천히 스르륵 원래대로 돌아옵니다 */
+  animation: smoothFocus 2.5s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: border-color 0.3s, transform 0.3s;
+}
+
 /* 모바일 대응 */
 @media (max-width: 768px) {
   .card-header { flex-direction: column; align-items: flex-start; }
