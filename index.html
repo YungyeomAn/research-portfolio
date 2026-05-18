@@ -433,7 +433,7 @@
             
           <div class="card-action" style="display: flex; justify-content: space-between; align-items: center;">
             <span class="location" style="font-size: 0.9rem; color: #999;"> <i class="mdi-maps-place tiny"></i> Pohang, Republic of Korea</span>
-            <a href="#Image-Charge onclick="focusCard('Image-Charge') class="teal-text" style="font-weight: bold; font-size: 0.9rem;"> <i class="mdi mdi-open-in-new"></i> View Full Project </a>
+            <a href="#Image-Charge" onclick="focusCard('Image-Charge') class="teal-text" style="font-weight: bold; font-size: 0.9rem;"> <i class="mdi mdi-open-in-new"></i> View Full Project </a>
           </div>
 
           <div class="exp-body">
@@ -644,7 +644,7 @@ environment
           </div>
 
           <!-- Asymmetry of Hydrogen Bonds -->
-          <div id="Hydrogen Bond" class="col s12 m6 l4">
+          <div id="Hydrogen-Bond" class="col s12 m6 l4">
             <div class="card medium">
               <div class="card-image waves-effect waves-block waves-light">
                 <img alt="image" src="assets/img/projects/Hydrogen Bond.png" style="height: 100%; width: 100%" class="activator" />
@@ -748,7 +748,7 @@ environment
           <div id="Lignogel" class="col s12 m6 l4">
             <div class="card medium">
               <div class="card-image waves-effect waves-block waves-light">
-                <img alt="image" src="assets/img/projects/lignogel.png" style="height: 100%; width: 100%" class="activator" />
+                <img alt="image" src="assets/img/projects/Lignogel.png" style="height: 100%; width: 100%" class="activator" />
               </div>
               <div class="card-content">
                 <span class="card-title activator teal-text hoverline"> Lignin-based Biocompatible Hydrogel Adhesives </i></span>
@@ -771,7 +771,7 @@ environment
                 Lignogel maintains structural stability and strong adhesion in wet conditions without swelling. It demonstrates antioxidant, antibacterial, wound-healing, and electroconductive properties, making it a promising multifunctional biomedical platform and a high-value upcycling route for lignin waste.</p>
 
                 <div class="card-action">
-                  <a aria-label="Visit " href="assets/research/Lignogel.pdf" target="_blank" data-position="top"
+                  <a aria-label="Visit " href="assets/research/lignogel.pdf" target="_blank" data-position="top"
                     data-tooltip="View Details"
                     class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-external-link"></i></a>
                 </div>
@@ -970,21 +970,26 @@ environment
         body.style.maxHeight = body.scrollHeight + "px";  // scrollHeight는 요소의 실제 콘텐츠 높이를 가져옴
       }
     }
-      function focusCard(cardId) {
-        const card = document.getElementById(cardId);
-        if (card) {
-          // 1. 해당 카드로 부드럽게 화면 이동
-          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          
-          // 2. 애니메이션 클래스 추가
-          card.classList.add('focused-card');
-          
-          // 3. 애니메이션이 끝나는 2초 뒤에 클래스를 자동으로 제거 (나중에 재클릭 시 또 작동하도록)
-          setTimeout(() => {
-            card.classList.remove('focused-card');
-          }, 5000);
-        }
+    function focusCard(cardId) {
+      const card = document.getElementById(cardId);
+      if (card) {
+        // 1. 해당 카드로 부드럽게 화면 이동
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // 2. [수정] Materialize 간섭 없이 자바스크립트로 직접 강조 스타일 주입
+        card.style.transition = 'all 0.4s ease-out';
+        card.style.border = '2px solid #176B87'; // 유저님이 지정한 예쁜 파란색
+        card.style.boxShadow = '0 10px 30px rgba(23, 107, 135, 0.4)'; // 푸른빛 강한 그림자
+        card.style.transform = 'translateY(-5px)'; // 약간 들리는 효과
+        
+        // 3. 2초 뒤에 원래 카드의 깔끔한 스타일로 부드럽게 복구
+        setTimeout(() => {
+          card.style.border = '1px solid transparent';
+          card.style.boxShadow = '0 2px 5px 0 rgba(0,0,0,0.16)'; // 원래 순정 그림자
+          card.style.transform = 'translateY(0)';
+        }, 5000);
       }
+    }
   </script>
 <script>
 
