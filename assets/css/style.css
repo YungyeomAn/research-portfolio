@@ -713,18 +713,17 @@ a.hoverline:hover {
 
 /* 3. HTML 구조를 그대로 둔 채, 맨 아래 card-action(버튼)만 완벽히 고정 */
 #projects .card.medium .card-reveal .card-action {
-  /* 💡 [수정] 스크롤을 내릴 때 버튼이 같이 올라가지 않고 화면 바닥에 딱 고정되도록 sticky 배치로 변경합니다. */
-  position: sticky !important;
-  bottom: 0 !important; /* card-reveal의 padding(20px)만큼 바닥에 밀착 */
+  /* 💡 sticky 대신 absolute로 바닥에 강제 고정합니다 */
+  position: absolute !important;
+  bottom: 0 !important; 
   left: 0;
   right: 0;
-  
-  margin-top: auto; 
-  padding: 16px 0 16px 0 !important; /* 좌우 여백은 부모 패딩을 따르고 위쪽 간격만 조정 */
-  background: #fff; 
+
+  /* 💡 좌우 여백을 카드 안쪽 패딩(20px)과 맞추기 위해 줍니다 */
+  padding: 15px 20px !important; 
+  background: #fff;  
   border-top: 1px solid rgba(160, 160, 160, 0.2);
   z-index: 2;
-  flex-shrink: 0; 
 }
 
 #projects .card.medium .card-image img {
