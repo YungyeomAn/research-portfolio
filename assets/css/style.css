@@ -689,6 +689,10 @@ a.hoverline:hover {
   height: 500px;
 }
 
+#projects .card.medium .card-content {
+  overflow: visible !important;
+}
+
 #projects .card.medium .card-content .card-action {
   padding: 8;
 }
@@ -715,7 +719,8 @@ a.hoverline:hover {
 
 #projects .card.medium .card-reveal > .card-action {
   flex-shrink: 0 !important;
-  padding: 12px 0 12px 0 !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
   border-top: 1px solid rgba(160, 160, 160, 0.2) !important;
   background-color: #fff !important;
   margin: 0 !important;
