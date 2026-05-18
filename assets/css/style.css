@@ -527,6 +527,12 @@ a.hoverline:hover {
   margin-bottom: 0;
 }
 
+.highlight-underline {
+  /* 하단 40% 영역에만 형광펜 효과를 줍니다 */
+  background: linear-gradient(to top, #b2dfdb 40%, transparent 40%);
+  padding: 0 2px;
+}
+
 /* exprerience section - added by me*/
 
 #experience .container {
