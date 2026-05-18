@@ -698,8 +698,7 @@ a.hoverline:hover {
   display: flex !important;
   flex-direction: column !important;
   overflow-y: auto !important; 
-  /* 💡 글자가 끝까지 내려갔을 때 버튼 뒤에 완전히 숨지 않고 여유 있게 보이기 위해 하단 패딩을 80px로 확보합니다. */
-  padding: 20px 20px 80px 20px !important;
+  padding: 20px !important;
   box-sizing: border-box;
 }
 
@@ -708,21 +707,23 @@ a.hoverline:hover {
   line-height: 1.6 !important;
 }
 
-/* 3. HTML 구조를 그대로 둔 채, 맨 아래 card-action(버튼)을 바닥에 완벽 고정 및 글씨 가림 */
-#projects .card.medium .card-reveal .card-action {
+/* 3. 눈속임 없이 앞면 간섭 해결 및 뒷면 버튼 바닥 고정 */
+
+/* ① 카드 앞면의 순정 버튼 영역 (원래 상태 유지, 간섭 차단) */
+#projects .card.medium .card-content > .card-action {
+  position: static !important;
+}
+
+/* ② 오직 카드 뒷면(card-reveal) 내부의 버튼 영역만 독립 레이어로 바닥에 고정 */
+#projects .card.medium .card-reveal > .card-action {
   position: sticky !important;
-  bottom: -20px !important; /* 💡 부모 패딩(20px) 때문에 생기던 틈새를 메워 글씨 비침을 원천 차단합니다. */
+  bottom: 0 !important;
   margin-top: auto !important; 
   
-  /* 💡 버튼 배경이 좌우로 꽉 차서 투명하게 비치는 곳이 없도록 패딩과 마진을 칼같이 정렬합니다. */
-  padding: 16px 20px !important; 
-  margin-left: -20px !important;
-  margin-right: -20px !important;
-  
-  background: #ffffff !important; /* 💡 뒤로 지나가는 글씨들을 가려주는 불투명 흰색 막 생성 */
+  /* 💡 흰색 배경 꼼수와 마이너스 마진을 싹 빼고, 순수한 패딩과 상단 경계선만 남깁니다. */
+  padding: 16px 0 0 0 !important; 
   border-top: 1px solid rgba(160, 160, 160, 0.2) !important;
   flex-shrink: 0 !important; 
-  z-index: 10 !important; /* 💡 지나가는 글씨보다 무조건 위에 오도록 순위 지정 */
 }
 
 #projects .card.medium .card-image img {
@@ -736,8 +737,7 @@ a.hoverline:hover {
   color: #176B87 !important;
 }
 
-/* 4. 잃어버렸던 강조림자 기능 복구 (자바스크립트 연동용)
-/* 자바스크립트가 붙여주는 이름표를 인식하여, 그리드 여백에 속지 않고 카드의 순수 껍데기 라인에만 정밀하게 파란그림자가 생깁니다. */
+/* 4. 자바스크립트 클래스 연동용 정밀 강조 그림자 */
 #projects .card.medium.focused-project {
   transition: box-shadow 0.3s ease-out !important;
   box-shadow: 0 0 15px 3px rgba(23, 107, 135, 0.8) !important;
