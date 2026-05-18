@@ -691,22 +691,28 @@ a.hoverline:hover {
 }
 
 #projects .card.medium .card-content .card-action {
-  padding: 8px 16px;
+  padding: 0;
 }
 
 #projects .card.medium .card-reveal {
   display: flex !important;
   flex-direction: column !important;
-  overflow-y: auto !important;
+  overflow-y: hidden !important;
   padding: 20px !important;
   box-sizing: border-box;
-  height: 500px !important;
-  max-height: 500px !important;
+  height: 100% !important;
 }
 
 /* 2. 내부 텍스트 가독성 설정 */
 #projects .card.medium .card-reveal > *:not(.card-action):not(.card-title) {
   line-height: 1.6 !important;
+}
+
+#projects .card.medium .card-reveal > p,
+#projects .card.medium .card-reveal > ul {
+  overflow-y: auto !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
 }
 
 #projects .card.medium .card-reveal > .card-action {
