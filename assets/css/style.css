@@ -529,7 +529,7 @@ a.hoverline:hover {
 
 .highlight-underline {
   /* 하단 40% 영역에만 형광펜 효과를 줍니다 */
-  background: linear-gradient(to top, #b2dfdb 40%, transparent 40%);
+  background: linear-gradient(to top, #6dacc9 40%, transparent 40%);
   padding: 0 2px;
 }
 
