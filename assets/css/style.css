@@ -685,42 +685,40 @@ a.hoverline:hover {
 }
 
 /* Project Section - added by me - 수정 중*/
-#projects .card.medium{
+#projects .card.medium {
   height: 500px;
 }
 
-#projects .card.medium .card-content .card-action{
+#projects .card.medium .card-content .card-action {
   padding: 8px 16px;
 }
 
 /* 1. 이 카드의 뒷면(card-reveal)을 Flexbox 구조로 변경 */
 #projects .card.medium .card-reveal {
   display: flex !important;
-  flex-direction: column;
+  flex-direction: column !important;
   justify-content: space-between;
   height: 100%;
-  overflow: hidden; /* 전체 스크롤은 막고 내부 텍스트만 스크롤되게 설정 */
+  overflow: hidden !important; /* [유지] 카드 전체가 스크롤되는 것을 막음 */
 }
 
-/* 2. 제목(Research Summary)과 텍스트들만 감싸서 스크롤 부여 
-   (HTML을 안 고쳤기 때문에 card-action을 제외한 요소들을 위로 밀어 올립니다) */
+/* 2. 제목(Research Summary)과 텍스트들만 감싸서 스크롤 부여 */
 #projects .card.medium .card-reveal > *:not(.card-action) {
-  /* 브라우저 호환성을 위해 스크롤 영역을 인지하도록 설정 */
+  /* [수정] 버튼을 제외한 상단 텍스트 영역에 직접 스크롤을 줍니다 */
+  overflow-y: auto; 
+  padding-right: 5px;
 }
 
 /* 3. HTML 구조를 그대로 둔 채, 맨 아래 card-action(버튼)만 완벽히 고정 */
 #projects .card.medium .card-reveal .card-action {
   margin-top: auto; /* 위쪽 여백을 자동으로 채워서 버튼을 맨 아래로 밀어냄 */
-  padding: 16px 0 0 0; /* 기존 패딩과 맞춰서 조절 */
+  padding: 8px 16px; /* [유지] 기존 카드 스타일과 패딩 통일 */
   background: #fff; /* 스크롤되는 글씨가 버튼 뒤로 숨도록 배경 지정 */
   border-top: 1px solid rgba(160, 160, 160, 0.2);
   z-index: 2;
+  flex-shrink: 0; /* [추천] 내용이 많아도 버튼 크기가 찌그러지지 않게 방지 */
 }
 
-/* 4. 글씨가 많을 때 상단 텍스트 영역에만 스크롤바가 생기도록 처리 */
-#projects .card.medium .card-reveal {
-  overflow-y: auto;
-}
 
 #projects .card.medium .card-image img {
   height: 100%;
