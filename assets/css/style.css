@@ -693,42 +693,39 @@ a.hoverline:hover {
   padding: 8px 16px;
 }
 
-/* 1. 이 카드의 뒷면(card-reveal) 구조 설정 */
+/* 1. 카드 뒷면(card-reveal) 자체의 스크롤 설정 */
 #projects .card.medium .card-reveal {
   display: flex !important;
   flex-direction: column !important;
-  height: 100%;
-  overflow-y: auto !important; 
-  /* 💡 [핵심] 3번에서 버튼을 absolute로 바닥에 박을 거라, 글자가 버튼 뒤로 숨지 않도록 아래쪽 패딩을 80px로 크게 줍니다. */
+  height: 100% !important;
+  overflow-y: auto !important;
+  /* 💡 중요: 스크롤 끝내도 텍스트가 바닥 버튼에 가려지지 않게 80px 여백 확보 */
   padding: 20px 20px 80px 20px !important;
-  box-sizing: border-box;
-  /* 💡 absolute 자식의 기준점이 되도록 relative를 확실히 선언합니다. */
-  position: relative !important; 
+  box-sizing: border-box !important;
+  position: relative !important;
 }
 
-/* 2. 내부 텍스트 가독성 설정 */
-#projects .card.medium .card-reveal > *:not(.card-action) {
-  line-height: 1.6; 
-  /* 💡 [수정] 개별 스크롤을 해제하여 전체가 하나로 묶여 흐르게 합니다. */
-  overflow-y: visible !important; 
+/* 2. 뒷면 내부 텍스트들의 가독성 설정 */
+#projects .card.medium .card-reveal > * {
+  line-height: 1.6 !important;
+  overflow-y: visible !important;
 }
 
+/* 3. [핵심] 엉뚱하게 중간에 끼어서 밀려 올라가던 card-action을 바닥에 절대 고정 */
 #projects .card.medium .card-reveal .card-action {
-  /* 💡 [핵심] sticky 대신 absolute를 주면 부모의 스크롤 엘리베이터에서 완전히 내려서 바닥에 고정됩니다. */
   position: absolute !important;
-  bottom: 0 !important; 
-  left: 0;
-  right: 0;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
   
-  /* 💡 기존에 꼬이게 만들던 margin-top은 무력화시킵니다. */
-  margin-top: 0 !important;  
+  margin-top: 0 !important;
+  padding: 16px 20px !important;
+  background: #ffffff !important;
+  border-top: 1px solid rgba(160, 160, 160, 0.2) !important;
   
-  /* 💡 부모의 사방 패딩을 뚫고 꽉 차게 붙도록 좌우 패딩을 조정합니다. */
-  padding: 16px 20px !important; 
-  background: #fff; 
-  border-top: 1px solid rgba(160, 160, 160, 0.2);
-  z-index: 5; /* 스크롤 되어 지나가는 텍스트보다 무조건 위에 오도록 설정 */
-  flex-shrink: 0; 
+  /* 💡 중요: 스크롤 되어 올라오는 텍스트가 버튼 위로 올라오지 못하게 레이어 우선순위 최대로 지정 */
+  z-index: 9999 !important; 
 }
 
 #projects .card.medium .card-image img {
@@ -738,7 +735,7 @@ a.hoverline:hover {
   object-position: center; /* 이미지가 잘릴 때 정중앙을 기준으로 자릅니다 */
 }
 
-#projects .card.medium .card-action a.teal-text {
+#experience .card-action a.teal-text {
   color: #176B87 !important;
 }
 
