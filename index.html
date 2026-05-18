@@ -433,7 +433,7 @@
             
           <div class="card-action" style="display: flex; justify-content: space-between; align-items: center;">
             <span class="location" style="font-size: 0.9rem; color: #999;"> <i class="mdi-maps-place tiny"></i> Pohang, Republic of Korea</span>
-            <a href="#Image-Charge" onclick="focusCard('Image-Charge')" class="teal-text" style="font-weight: bold; font-size: 0.9rem;"> <i class="mdi mdi-open-in-new"></i> View Full Project </a>
+            <a href="#Image-Charge" onclick="focusCard('Image-Charge', 'Water-Models')" class="teal-text" style="font-weight: bold; font-size: 0.9rem;"> <i class="mdi mdi-open-in-new"></i> View Full Project </a>
           </div>
 
           <div class="exp-body">
@@ -715,7 +715,7 @@ environment
           </div>
 
           <!-- Water Models and Protein Folding Simulations -->
-          <div class="col s12 m6 l4">
+          <div id="Water-Models" class="col s12 m6 l4">
             <div class="card medium">
               <div class="card-image waves-effect waves-block waves-light">
                 <img alt="image" src="assets/img/projects/Water Models.png" style="height: 100%; width: 100%" class="activator" />
@@ -970,20 +970,21 @@ environment
         body.style.maxHeight = body.scrollHeight + "px";  // scrollHeight는 요소의 실제 콘텐츠 높이를 가져옴
       }
     }
-    function focusCard(cardId) {
-      const card = document.getElementById(cardId);
-      if (card) {
-        // 1. 해당 프로젝트 카드로 부드럽게 화면 이동
-        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        
-        // 2. 직접 스타일을 주지 않고, CSS 클래스 이름표만 추가
-        card.classList.add('focused-project');
-        
-        // 3. 4초 뒤 이름표 제거
-        setTimeout(() => {
-          card.classList.remove('focused-project');
-        }, 4000);
+    function focusCard(...cardIds) {
+      if (cardIds.length === 0) return;
+      const firstWrapper = document.getElementById(cardIds[0]);
+      if (firstWrapper) {
+        firstWrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
+      cardIds.forEach(cardId => {
+        const wrapper = document.getElementById(cardId);
+        if (!wrapper) return;
+        const cardEl = wrapper.querySelector('.card') || wrapper;
+        cardEl.classList.add('focused-project');
+        setTimeout(() => {
+          cardEl.classList.remove('focused-project');
+        }, 4000);
+      });
     }
   </script>
 <script>
