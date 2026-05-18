@@ -693,39 +693,28 @@ a.hoverline:hover {
   padding: 8px 16px;
 }
 
-/* 1. 카드 뒷면(card-reveal) 자체의 스크롤 설정 */
+/* 1. 이 카드의 뒷면(card-reveal) 구조 설정 */
 #projects .card.medium .card-reveal {
   display: flex !important;
-  flex-direction: column !important;
+  flex-direction: column !important; /* 위아래 레이아웃 정렬 */
   height: 100% !important;
-  overflow-y: auto !important;
-  /* 💡 중요: 스크롤 끝내도 텍스트가 바닥 버튼에 가려지지 않게 80px 여백 확보 */
-  padding: 20px 20px 80px 20px !important;
+  overflow: hidden !important; /* 자체 스크롤은 막고, 내부 텍스트만 스크롤 시킵니다 */
+  padding: 20px !important;
   box-sizing: border-box !important;
-  position: relative !important;
 }
 
-/* 2. 뒷면 내부 텍스트들의 가독성 설정 */
-#projects .card.medium .card-reveal > * {
+/* 2. 내부 텍스트 가독성 설정 및 "여기만" 스크롤 부여 */
+#projects .card.medium .card-reveal > *:not(.card-action):not(.card-title) {
   line-height: 1.6 !important;
-  overflow-y: visible !important;
 }
 
-/* 3. [핵심] 엉뚱하게 중간에 끼어서 밀려 올라가던 card-action을 바닥에 절대 고정 */
+/* 3. HTML 구조를 그대로 둔 채, 맨 아래 card-action(버튼)을 바닥에 자연스럽게 밀착 */
 #projects .card.medium .card-reveal .card-action {
-  position: absolute !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: 100% !important;
-  
-  margin-top: 0 !important;
-  padding: 16px 20px !important;
-  background: #ffffff !important;
+  margin-top: auto !important; /* flex 구조에서 버튼을 무조건 맨 밑으로 밀어냅니다 */
+  padding: 16px 0 0 0 !important; 
+  background: #fff !important; 
   border-top: 1px solid rgba(160, 160, 160, 0.2) !important;
-  
-  /* 💡 중요: 스크롤 되어 올라오는 텍스트가 버튼 위로 올라오지 못하게 레이어 우선순위 최대로 지정 */
-  z-index: 9999 !important; 
+  flex-shrink: 0 !important; /* 버튼이 찌그러지지 않도록 방어 */
 }
 
 #projects .card.medium .card-image img {
