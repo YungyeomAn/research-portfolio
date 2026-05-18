@@ -693,33 +693,39 @@ a.hoverline:hover {
   padding: 8px 16px;
 }
 
-/* 1. 이 카드의 뒷면(card-reveal)을 Flexbox 구조로 변경 */
+/* 1. 이 카드의 뒷면(card-reveal) 구조 설정 */
 #projects .card.medium .card-reveal {
   display: flex !important;
   flex-direction: column !important;
-  justify-content: space-between;
   height: 100%;
-  overflow: hidden !important; /* [유지] 카드 전체가 스크롤되는 것을 막음 */
+  /* 💡 [수정] 카드 자체에 스크롤을 줍니다. 이렇게 해야 내부 태그들이 쪼개지지 않고 한 덩어리로 같이 스크롤 됩니다. */
+  overflow-y: auto !important; 
+  padding: 20px !important;
+  box-sizing: border-box;
 }
 
-/* 2. 제목(Research Summary)과 텍스트들만 감싸서 스크롤 부여 */
+/* 2. 내부 텍스트 가독성 설정 */
 #projects .card.medium .card-reveal > *:not(.card-action) {
-  overflow-y: auto; 
-  padding-right: 5px;
-  /* 💡 핵심 추가: <br>로 줄바꿈된 텍스트들이 뭉치지 않고 예쁘게 정렬되도록 합니다 */
   line-height: 1.6; 
+  /* 💡 [수정] 개별 스크롤을 해제하여 전체가 하나로 묶여 흐르게 합니다. */
+  overflow-y: visible !important; 
 }
 
 /* 3. HTML 구조를 그대로 둔 채, 맨 아래 card-action(버튼)만 완벽히 고정 */
 #projects .card.medium .card-reveal .card-action {
-  margin-top: auto; /* 위쪽 여백을 자동으로 채워서 버튼을 맨 아래로 밀어냄 */
-  padding: 8px 16px; /* [유지] 기존 카드 스타일과 패딩 통일 */
-  background: #fff; /* 스크롤되는 글씨가 버튼 뒤로 숨도록 배경 지정 */
+  /* 💡 [수정] 스크롤을 내릴 때 버튼이 같이 올라가지 않고 화면 바닥에 딱 고정되도록 sticky 배치로 변경합니다. */
+  position: sticky !important;
+  bottom: -20px !important; /* card-reveal의 padding(20px)만큼 바닥에 밀착 */
+  left: 0;
+  right: 0;
+  
+  margin-top: auto; 
+  padding: 16px 0 0 0 !important; /* 좌우 여백은 부모 패딩을 따르고 위쪽 간격만 조정 */
+  background: #fff; 
   border-top: 1px solid rgba(160, 160, 160, 0.2);
   z-index: 2;
-  flex-shrink: 0; /* [추천] 내용이 많아도 버튼 크기가 찌그러지지 않게 방지 */
+  flex-shrink: 0; 
 }
-
 
 #projects .card.medium .card-image img {
   height: 100%;
