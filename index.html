@@ -826,7 +826,7 @@ environment
                   <div class="project-keywords">#Polymer Thin Films #iCVD</div>
                 </div>
                 
-                <div class="card-action" style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-top: 1px solid rgba(160,160,160,0.2);">
+                <div class="card-action" style="display: flex; justify-content: space-between; align-items: center; padding: 8px 16px; border-top: 1px solid rgba(160,160,160,0.2);">
                   <p class="grey-text text-darken-1" style="font-size: 0.9rem; margin: 0;">
                     KAIST
                   </p>
@@ -973,21 +973,21 @@ environment
     function focusCard(cardId) {
       const card = document.getElementById(cardId);
       if (card) {
-        // 1. 해당 카드로 부드럽게 화면 이동
+        // 1. 해당 프로젝트 카드로 부드럽게 화면 이동
         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
         
-        // 2. [수정] Materialize 간섭 없이 자바스크립트로 직접 강조 스타일 주입
+        // 2. 외부 라이브러리 간섭 없이 자바스크립트로 직접 테두리와 그림자 주입
         card.style.transition = 'all 0.4s ease-out';
-        card.style.border = '2px solid #176B87'; // 유저님이 지정한 예쁜 파란색
-        card.style.boxShadow = '0 10px 30px rgba(23, 107, 135, 0.4)'; // 푸른빛 강한 그림자
-        card.style.transform = 'translateY(-5px)'; // 약간 들리는 효과
+        card.style.border = '2px solid #176B87'; // 유저님의 예쁜 파란색
+        card.style.boxShadow = '0 10px 30px rgba(23, 107, 135, 0.4)'; // 푸른빛 도는 강한 그림자
+        card.style.transform = 'translateY(-5px)'; // 카드가 위로 슥 들리는 효과
         
-        // 3. 2초 뒤에 원래 카드의 깔끔한 스타일로 부드럽게 복구
+        // 3. 2초 동안 보여준 뒤 원래 카드의 깔끔한 상태로 부드럽게 복구
         setTimeout(() => {
           card.style.border = '1px solid transparent';
-          card.style.boxShadow = '0 2px 5px 0 rgba(0,0,0,0.16)'; // 원래 순정 그림자
+          card.style.boxShadow = '0 2px 5px 0 rgba(0,0,0,0.16)'; // Materialize 순정 그림자
           card.style.transform = 'translateY(0)';
-        }, 5000);
+        }, 4000);
       }
     }
   </script>
