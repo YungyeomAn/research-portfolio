@@ -707,22 +707,13 @@ a.hoverline:hover {
   line-height: 1.6 !important;
 }
 
-/* 3. 눈속임 없이 앞면 간섭 해결 및 뒷면 버튼 바닥 고정 */
-
-/* ① 카드 앞면의 순정 버튼 영역 (원래 상태 유지, 간섭 차단) */
-#projects .card.medium .card-content > .card-action {
-  position: static !important;
-}
-
 /* ② 오직 카드 뒷면(card-reveal) 내부의 버튼 영역만 독립 레이어로 바닥에 고정 */
 #projects .card.medium .card-reveal > .card-action {
-  position: sticky !important;
-  bottom: 0 !important;
-  margin-top: auto !important; 
-  background-color: #fff !important;
-  padding: 16px 0 0 0 !important; 
+  margin-top: auto !important;
+  padding: 12px 0 4px 0 !important;
   border-top: 1px solid rgba(160, 160, 160, 0.2) !important;
-  flex-shrink: 0 !important; 
+  flex-shrink: 0 !important;
+  background-color: #fff !important;
 }
 
 #projects .card.medium .card-image img {
