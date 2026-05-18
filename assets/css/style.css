@@ -945,101 +945,218 @@ small {
   }
 }
 
-/* =======================================================
-   모바일 및 태블릿 화면 맞춤 반응형 최적화 (맨 밑에 추가하세요)
-   ======================================================= */
-
-/* 1. 태블릿 및 작은 노트북 화면 (화면 너비 992px 이하) */
-@media (max-width: 992px) {
-  /* 사이드바가 접히므로 메인 영역의 좌측 여백을 없앱니다 */
-  main {
-    padding-left: 0 !important;
-    padding-top: 64px !important;
+/* ============================================================
+   반응형 추가 스타일
+   브레이크포인트:
+     태블릿/중간 화면 : max-width 1200px
+     모바일           : max-width 600px
+   ============================================================ */
+ 
+/* --- 태블릿 / 중간 화면 (1200px 이하) --- */
+@media (max-width: 1200px) {
+ 
+  /* Experience 카드: 로고 영역 축소 */
+  .logo-section {
+    width: 100px;
+    height: 90px;
+    margin-right: 16px;
   }
-  
-  /* 화면이 좁아지므로 컨테이너 양옆 너비를 넓혀서 공간을 확보합니다 */
-  .container {
-    width: 90% !important;
+ 
+  /* Experience 카드: 기관명 폰트 약간 축소 */
+  .inst-name {
+    font-size: 1.05rem !important;
   }
-
-  /* 대형 모니터 기준이던 타이틀 크기를 자연스럽게 줄입니다 */
-  h2 {
-    font-size: 28px !important;
-    text-align: center;
-    margin-top: 30px !important;
+ 
+  /* Experience 카드: role 텍스트 줄바꿈 허용 */
+  .role {
+    font-size: 0.85rem;
+    max-width: 180px;
+    word-break: keep-all;
   }
-
-  /* 프로젝트 카드가 세로로 배치될 때 너무 길지 않게 높이를 살짝 조절합니다 */
+ 
+  /* Project 카드 높이 살짝 줄임 */
   #projects .card.medium {
-    height: 480px !important;
-    margin-bottom: 20px !important;
+    height: 460px;
+  }
+ 
+  #projects .card.medium .card-reveal {
+    height: 100% !important;
   }
 }
-
-/* 2. 스마트폰 모바일 화면 (화면 너비 600px 이하) */
+ 
+/* --- 모바일 (600px 이하) --- */
 @media (max-width: 600px) {
-  /* 첫 화면 인트로 섹션 정렬 및 가독성 확보 */
-  #intro.section {
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
-    background-position: center !important; /* 배경 이미지 중앙 정렬 */
+ 
+  /* === 공통 === */
+  body {
+    font-size: 16px;
   }
-  
-  #intro .container {
-    text-align: center !important; /* 모바일에서는 텍스트 중앙 정렬이 깔끔합니다 */
-  }
-
-  /* 모바일 화면에 맞춰 대형 텍스트 크기 최종 축소 */
-  h2 {
-    font-size: 24px !important;
-    line-height: 1.4 !important;
-  }
-  
+ 
   h3 {
-    font-size: 20px !important;
-    padding: 10px 15px !important;
+    font-size: 1.4rem;
+    padding: 16px 20px;
+    margin-bottom: 30px;
   }
-
-  /* 프로젝트 카드 모바일 최적화 (한 화면에 쏙 들어오게 높이 축소) */
+ 
+  .container {
+    width: 92%;
+  }
+ 
+  /* === Intro 섹션 === */
+  #intro.section {
+    min-height: 100vh;
+  }
+ 
+  .readme, .contactme {
+    padding: 9px 22px;
+    font-size: 13px;
+  }
+ 
+  .contactme {
+    margin-top: 0.8em;
+  }
+ 
+  /* === Experience 섹션 === */
+ 
+  /* 헤더: 로고와 정보를 세로로 쌓음 */
+  .exp-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 12px;
+    gap: 12px;
+  }
+ 
+  /* 로고: 세로선 → 아래 가로선으로 전환, 가로 전체 */
+  .logo-section {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 0 12px 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    justify-content: flex-start;
+  }
+ 
+  .inst-logo {
+    max-height: 48px;
+  }
+ 
+  /* 기관명 + role: 세로 쌓기 */
+  .exp-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+ 
+  .inst-name {
+    font-size: 1.0rem !important;
+  }
+ 
+  .role {
+    font-size: 0.82rem;
+    max-width: 100%;
+    text-align: left;
+  }
+ 
+  /* 날짜/supervisor 폰트 축소 */
+  .exp-sub-info {
+    font-size: 0.82rem;
+    margin-bottom: 8px;
+  }
+ 
+  /* summary 폰트 축소 */
+  .exp-summary {
+    font-size: 0.9rem;
+  }
+ 
+  /* tool 태그 */
+  .tool-tag {
+    font-size: 11px;
+    padding: 2px 8px;
+  }
+ 
+  /* + 아이콘 */
+  .expand-status-icon {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+ 
+  .exp-header {
+    position: relative;
+  }
+ 
+  /* view full project 링크 */
+  .exp-card > .card-action {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 10px 12px;
+  }
+ 
+  /* details 내용 */
+  .details-content {
+    padding: 16px;
+    font-size: 0.9rem;
+  }
+ 
+  .details-content ul {
+    padding-left: 16px;
+    line-height: 1.7;
+  }
+ 
+  /* === Projects 섹션 === */
+ 
+  /* 카드 높이 모바일 조정 */
   #projects .card.medium {
-    height: 440px !important; 
+    height: auto;
+    min-height: 420px;
   }
-  
-  /* 프로젝트 뒷면(리빌) 모바일 가독성 (글자 크기를 살짝 줄여 스크롤 부담 완화) */
+ 
+  /* 이미지 높이 축소 */
+  .card.medium .card-image {
+    height: 180px;
+  }
+ 
+  /* 카드 제목 폰트 */
+  #projects .card .card-content .card-title {
+    font-size: 1.0rem;
+    line-height: 1.35;
+  }
+ 
+  /* 키워드 */
+  .project-keywords {
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+ 
+  /* card-reveal 높이: auto로 풀어서 내용에 맞게 */
   #projects .card.medium .card-reveal {
-    padding: 15px !important;
+    height: auto !important;
+    max-height: 100% !important;
+    overflow-y: auto !important;
   }
-  
-  #projects .card.medium .card-reveal p,
-  #projects .card.medium .card-reveal li {
-    font-size: 0.9rem !important;
-    line-height: 1.5 !important;
+ 
+  /* card-reveal-body: 스크롤 필요 없으면 그냥 보이게 */
+  #projects .card.medium .card-reveal > .card-reveal-body {
+    overflow-y: visible !important;
+    flex: none !important;
   }
-  
-  /* 뒷면 글자 밑부분이 버튼에 가려지지 않게 방어벽 높이 재조정 */
-  #projects .card.medium .card-reveal > *:not(.card-action):not(.card-title) {
-    margin-bottom: 60px !important;
+ 
+  /* card-reveal 텍스트 폰트 */
+  #projects .card.medium .card-reveal p {
+    font-size: 0.9rem;
+    line-height: 1.55;
   }
-
-  /* 경력(Experience) 섹션 모바일 가독성 정렬 */
-  #experience .card-title {
-    font-size: 1.2rem !important;
-    text-align: center;
+ 
+  /* === Skills 섹션 === */
+  #skills .card.large {
+    height: auto;
   }
-  
-  /* 연락처(Contact) 섹션의 이메일/깃허브 링크들이 모바일에서 깨지지 않게 수직 정렬 */
-  #contact {
-    text-align: center !important;
-  }
-  
-  #contact a:not(.btn-floating) {
-    display: inline-block !important;
-    margin: 8px auto !important;
-    float: none !important;
-    text-align: center !important;
-  }
-  
-  #contact .col {
-    text-align: center !important;
+ 
+  /* === Contact 섹션 === */
+  #contact .card-content {
+    padding: 20px 16px;
   }
 }
