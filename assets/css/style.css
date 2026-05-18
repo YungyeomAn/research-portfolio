@@ -719,8 +719,7 @@ a.hoverline:hover {
   position: sticky !important;
   bottom: 0 !important;
   margin-top: auto !important; 
-  
-  /* 💡 흰색 배경 꼼수와 마이너스 마진을 싹 빼고, 순수한 패딩과 상단 경계선만 남깁니다. */
+  background-color: #fff !important;
   padding: 16px 0 0 0 !important; 
   border-top: 1px solid rgba(160, 160, 160, 0.2) !important;
   flex-shrink: 0 !important; 
@@ -739,28 +738,14 @@ a.hoverline:hover {
 
 /* 4. 자바스크립트 클래스 연동용 정밀 강조 그림자 */
 #projects .card.medium.focused-project {
-  transition: box-shadow 0.3s ease-out !important;
-  box-shadow: 0 0 15px 3px rgba(23, 107, 135, 0.8) !important;
+  animation: focusPulse 4s ease-out forwards !important;
 }
 
-@keyframes smoothFocus {
-  0% {
-    /* 기존 Materialize 카드보다 더 깊고 부드러운 청록색 계열 그림자 */
-    box-shadow: 0 10px 30px rgba(0, 150, 136, 0.25);
-    border-color: #009688;
-    transform: translateY(-4px); /* 아주 살짝 위로 들리는 효과 */
-  }
-  100% {
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16); /* 원래 카드로 원복 */
-    border-color: transparent;
-    transform: translateY(0);
-  }
-}
-
-.focused-card {
-  /* 2.5초 동안 아주 천천히 스르륵 원래대로 돌아옵니다 */
-  animation: smoothFocus 2.5s cubic-bezier(0.25, 1, 0.5, 1);
-  transition: border-color 0.3s, transform 0.3s;
+@keyframes focusPulse {
+  0%   { box-shadow: 0 0 0px 0px rgba(23, 107, 135, 0); }
+  15%  { box-shadow: 0 0 18px 5px rgba(23, 107, 135, 0.7); }
+  60%  { box-shadow: 0 0 14px 4px rgba(23, 107, 135, 0.5); }
+  100% { box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16); }
 }
 
 /* 모바일 대응 */
