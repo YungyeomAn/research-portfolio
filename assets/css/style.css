@@ -704,9 +704,10 @@ a.hoverline:hover {
 
 /* 2. 제목(Research Summary)과 텍스트들만 감싸서 스크롤 부여 */
 #projects .card.medium .card-reveal > *:not(.card-action) {
-  /* [수정] 버튼을 제외한 상단 텍스트 영역에 직접 스크롤을 줍니다 */
   overflow-y: auto; 
   padding-right: 5px;
+  /* 💡 핵심 추가: <br>로 줄바꿈된 텍스트들이 뭉치지 않고 예쁘게 정렬되도록 합니다 */
+  line-height: 1.6; 
 }
 
 /* 3. HTML 구조를 그대로 둔 채, 맨 아래 card-action(버튼)만 완벽히 고정 */
