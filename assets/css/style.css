@@ -734,6 +734,10 @@ a.hoverline:hover {
   object-position: center; /* 이미지가 잘릴 때 정중앙을 기준으로 자릅니다 */
 }
 
+#projects .card .card-action a.teal-text {
+  color: #176B87 !important;
+}
+
 @keyframes smoothFocus {
   0% {
     /* 기존 Materialize 카드보다 더 깊고 부드러운 청록색 계열 그림자 */
