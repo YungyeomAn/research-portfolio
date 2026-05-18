@@ -306,7 +306,7 @@
         
           <div class="card-action" style="display: flex; justify-content: space-between; align-items: center;">
             <span class="location" style="font-size: 0.9rem; color: #999;"> <i class="mdi-maps-place tiny"></i> Pohang, Republic of Korea</span>
-            <a href="#Programmable-Pattern" onclick="focusCard('Programmable-Pattern') class="teal-text" style="font-weight: bold; font-size: 0.9rem;"> <i class="mdi mdi-open-in-new"></i> View Full Project</a>
+            <a href="#Programmable-Pattern" onclick="focusCard('Programmable-Pattern')" class="teal-text" style="font-weight: bold; font-size: 0.9rem;"> <i class="mdi mdi-open-in-new"></i> View Full Project</a>
           </div>
 
           <div class="exp-body">
@@ -371,7 +371,7 @@
             
           <div class="card-action" style="display: flex; justify-content: space-between; align-items: center;">
             <span class="location" style="font-size: 0.9rem; color: #999;"> <i class="mdi-maps-place tiny"></i> Mainz, Germany</span>
-            <a href="#Hydrogen-Bond" onclick="focusCard('Hydrogen-Bond') class="teal-text" style="font-weight: bold; font-size: 0.9rem;"> <i class="mdi mdi-open-in-new"></i> View Full Project </a>
+            <a href="#Hydrogen-Bond" onclick="focusCard('Hydrogen-Bond')" class="teal-text" style="font-weight: bold; font-size: 0.9rem;"> <i class="mdi mdi-open-in-new"></i> View Full Project </a>
           </div>
 
           <div class="exp-body">
@@ -433,7 +433,7 @@
             
           <div class="card-action" style="display: flex; justify-content: space-between; align-items: center;">
             <span class="location" style="font-size: 0.9rem; color: #999;"> <i class="mdi-maps-place tiny"></i> Pohang, Republic of Korea</span>
-            <a href="#Image-Charge" onclick="focusCard('Image-Charge') class="teal-text" style="font-weight: bold; font-size: 0.9rem;"> <i class="mdi mdi-open-in-new"></i> View Full Project </a>
+            <a href="#Image-Charge" onclick="focusCard('Image-Charge')" class="teal-text" style="font-weight: bold; font-size: 0.9rem;"> <i class="mdi mdi-open-in-new"></i> View Full Project </a>
           </div>
 
           <div class="exp-body">
@@ -496,7 +496,7 @@
             
           <div class="card-action" style="display: flex; justify-content: space-between; align-items: center;">
             <span class="location" style="font-size: 0.9rem; color: #999;"> <i class="mdi-maps-place tiny"></i> Pohang, Republic of Korea</span>
-            <a href="#Lignogel" onclick="focusCard('Lignogel') class="teal-text" style="font-weight: bold; font-size: 0.9rem;"> <i class="mdi mdi-open-in-new"></i> View Full Project </a>
+            <a href="#Lignogel" onclick="focusCard('Lignogel')" class="teal-text" style="font-weight: bold; font-size: 0.9rem;"> <i class="mdi mdi-open-in-new"></i> View Full Project </a>
           </div>
 
           <div class="exp-body">
@@ -974,20 +974,25 @@ environment
       const card = document.getElementById(cardId);
       if (card) {
         // 1. 해당 프로젝트 카드로 부드럽게 화면 이동
-        card.scrollIntoView({ behavior: 'smooth', block: 'center' })
-        card.style.overflow = 'visible'; 
-        // 2. 외부 라이브러리 간섭 없이 자바스크립트로 직접 테두리와 그림자 주입
-        card.style.transition = 'all 0.4s ease-out';
-        card.style.border = '2px solid #176B87'; // 유저님의 예쁜 파란색
-        card.style.boxShadow = '0 10px 30px rgba(23, 107, 135, 0.4)'; // 푸른빛 도는 강한 그림자
-        card.style.transform = 'translateY(-5px)'; // 카드가 위로 슥 들리는 효과
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
         
-        // 3. 2초 동안 보여준 뒤 원래 카드의 깔끔한 상태로 부드럽게 복구
+        // 💡 [핵심] 테두리와 그림자가 잘리지 않도록 overflow를 완전히 뚫어줍니다.
+        card.style.setProperty('overflow', 'visible', 'important'); 
+        
+        // 2. 테두리와 그림자 주입
+        card.style.transition = 'all 0.4s ease-out';
+        card.style.border = '2px solid #176B87'; 
+        card.style.boxShadow = '0 10px 30px rgba(23, 107, 135, 0.4)'; 
+        card.style.transform = 'translateY(-5px)'; 
+        
+        // 3. 4초 뒤 원래대로 복구
         setTimeout(() => {
           card.style.border = '1px solid transparent';
-          card.style.boxShadow = '0 2px 5px 0 rgba(0,0,0,0.16)'; // Materialize 순정 그림자
+          card.style.boxShadow = '0 2px 5px 0 rgba(0,0,0,0.16)'; 
           card.style.transform = 'translateY(0)';
-          card.style.overflow = 'hidden';
+          
+          // 💡 [핵심] 강조가 끝나면 다시 내부를 깔끔하게 hidden으로 닫아줍니다.
+          card.style.setProperty('overflow', 'hidden', 'important');
         }, 4000);
       }
     }
