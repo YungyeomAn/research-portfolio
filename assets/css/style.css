@@ -716,6 +716,13 @@ a.hoverline:hover {
   overflow-y: auto;
 }
 
+#projects .card.medium .card-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* 💡 핵심: 이미지가 찌그러지지 않고 프레임에 맞게 꽉 차게 잘립니다! */
+  object-position: center; /* 이미지가 잘릴 때 정중앙을 기준으로 자릅니다 */
+}
+
 /* 모바일 대응 */
 @media (max-width: 768px) {
   .card-header { flex-direction: column; align-items: flex-start; }
