@@ -696,11 +696,10 @@ a.hoverline:hover {
 /* 1. 이 카드의 뒷면(card-reveal) 구조 설정 */
 #projects .card.medium .card-reveal {
   display: flex !important;
-  flex-direction: column !important; /* 위아래 레이아웃 정렬 */
-  height: 100% !important;
-  overflow: hidden !important; /* 자체 스크롤은 막고, 내부 텍스트만 스크롤 시킵니다 */
+  flex-direction: column !important;
+  overflow-y: auto !important; 
   padding: 20px !important;
-  box-sizing: border-box !important;
+  box-sizing: border-box;
 }
 
 /* 2. 내부 텍스트 가독성 설정 및 "여기만" 스크롤 부여 */
@@ -715,6 +714,8 @@ a.hoverline:hover {
   background: #fff !important; 
   border-top: 1px solid rgba(160, 160, 160, 0.2) !important;
   flex-shrink: 0 !important; /* 버튼이 찌그러지지 않도록 방어 */
+  position: sticky !important;
+  bottom: 0 !important
 }
 
 #projects .card.medium .card-image img {
