@@ -857,6 +857,7 @@ small {
     color: #009688;
     height: 56px;
     line-height: 56px;
+    color: #176B87;
   }
   h3 {
     padding: 20px 30px;
@@ -905,46 +906,6 @@ small {
   }
 }
 
-
-@media (max-width: 600px) {
-  h2 {
-    font-size: 22px;
-    line-height: 200%;
-    margin: 30px 0 0;
-  }
-    #intro.section .container *:not(span) {
-    padding: 0;
-  }
-  .card .card-content .card-title {
-    font-size: 20px;
-    line-height: 24px;
-  }
-  #experience span.card-title {
-    text-align: center;
-    display: block;
-  }
-  #experience span.card-title a {
-    margin: 0;
-  }
-  i.mdi-navigation-close.right {
-    position: relative;
-    bottom: 15px;
-  }
-  #contact a:not(.btn-floating) {
-    text-align: center;
-    display: block;
-    left: initial;
-    bottom: initial;
-  }
-  #contact a.btn-floating.btn-large {
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-  }
-  #intro.section {
-    background-position-x: 30%;
-  }
-}
 
 /* ============================================================
    반응형 추가 스타일
@@ -1009,7 +970,7 @@ small {
   }
   
   #intro.section .caption h5:first-of-type {
-  min-height: 2.4em;
+  min-height: 3.2em;
   }
 
   #intro.section .content {
@@ -1141,4 +1102,6 @@ small {
   /* Skills / Contact */
   #skills .card.large { height: auto; }
   #contact .card-content { padding: 20px 16px; }
+  #contact a:not(.btn-floating) { text-align: center; display: block; left: initial; bottom: initial; }
+  #contact a.btn-floating.btn-large { display: block; text-align: center; margin: 0 auto; }
 }
