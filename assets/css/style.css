@@ -190,6 +190,7 @@ nav i {
   padding: 0 15px;
   position: relative;
   top: 5px;
+  color: #176B87;
 }
 
 /* main */
@@ -911,7 +912,7 @@ small {
     line-height: 200%;
     margin: 30px 0 0;
   }
-  #intro.section .container *:not(span) {
+    #intro.section .container *:not(span) {
     padding: 0;
   }
   .card .card-content .card-title {
@@ -1006,6 +1007,10 @@ small {
     padding-top: 20px;
     padding-bottom: 40px;
   }
+  
+  #intro.section .caption h5:first-of-type {
+  min-height: 2.4em;
+  }
 
   #intro.section .content {
     margin-left: 0 !important;
@@ -1042,7 +1047,7 @@ small {
     border-bottom: 1px solid var(--border-color);
     padding: 0 0 8px 0;
     margin-right: 0;
-    margin-bottom: 8px;
+    margin-bottom:4px;
   }
 
   .inst-logo { max-height: 44px; }
@@ -1060,6 +1065,8 @@ small {
     white-space: normal !important;
     word-break: keep-all;
     width: 100%;
+    margin-top: 0 !important;    /* 이 줄 추가 */
+    margin-bottom: 0 !important; /* 이 줄 추가 */
   }
 
   .role { font-size: 0.82rem; max-width: 100%; text-align: left; }
